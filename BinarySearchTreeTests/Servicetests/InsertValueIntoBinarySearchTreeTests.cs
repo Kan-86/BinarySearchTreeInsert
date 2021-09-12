@@ -2,24 +2,16 @@
 using BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.Core.Services;
 using BinaryTree.EntitiesProject.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace UnitTestProject1.ServiceTest
+namespace BinarySearchTreeTests.Servicetests
 {
-    /// <summary>
-    /// Summary description for UnitTest1
-    /// </summary>
     [TestClass]
-    public class CreateBinarySearchTreeUnitTest
+    public class InsertValueIntoBinarySearchTreeTests
     {
-        Mock<INodeServices> _mockedNodeService;
         INodeServices _nodeService;
-        public CreateBinarySearchTreeUnitTest()
+        public InsertValueIntoBinarySearchTreeTests()
         {
-            _mockedNodeService = new Mock<INodeServices>();
             _nodeService = new NodeServices();
         }
 

@@ -7,9 +7,7 @@ namespace BinaryTree.EntitiesProject.Entities
 {
     public class Node
     {
-        [Required]
         public int Value { get; set; }
-        [Required]
         public Tree Tree { get; set; }
 
     }

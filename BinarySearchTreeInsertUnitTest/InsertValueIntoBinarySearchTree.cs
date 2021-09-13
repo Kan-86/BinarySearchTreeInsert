@@ -1,18 +1,18 @@
-﻿using BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices;
+using BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices;
 using BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.Core.Services;
 using BinaryTree.EntitiesProject.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace BinarySearchTreeTests.Servicetests
+namespace BinarySearchTreeInsertUnitTest
 {
     [TestClass]
-    public class InsertValueIntoBinarySearchTreeTests
+    public class InsertValueIntoBinarySearchTree
     {
-        INodeServices _nodeService;
-        public InsertValueIntoBinarySearchTreeTests()
+        IBSTServices _nodeService;
+        public InsertValueIntoBinarySearchTree()
         {
-            _nodeService = new NodeServices();
+            _nodeService = new BSTServices();
         }
 
         private TestContext testContextInstance;

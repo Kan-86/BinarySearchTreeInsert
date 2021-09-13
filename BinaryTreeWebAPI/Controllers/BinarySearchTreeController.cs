@@ -16,16 +16,16 @@ namespace BinaryTreeWebAPI.Controllers
     public class BinarySearchTreeController : ControllerBase
     {
         private readonly ILogger<BinarySearchTreeController> _logger;
-        private readonly INodeServices _nodeServices;
+        private readonly IBSTServices _nodeServices;
         public BinarySearchTreeController(ILogger<BinarySearchTreeController> logger,
-            INodeServices nodeServices)
+            IBSTServices nodeServices)
         {
             _logger = logger;
             _nodeServices = nodeServices;
         }
 
         [HttpPost]
-        public ActionResult<Tree> Get(Node node)
+        public ActionResult<Tree> InsertValueToBST(Node node)
         {
             try
             {
@@ -37,6 +37,12 @@ namespace BinaryTreeWebAPI.Controllers
 
                 return BadRequest(e.Message);
             }
+        }
+
+        [HttpGet]
+        public ActionResult<string> Get()
+        {
+            return "test for docker2";
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.Core.Services
 {
-    public class NodeServices : INodeServices
+    public class BSTServices : IBSTServices
     {
         // A utility function to create a new BST Node.  When we have found the tree node to insert the value.
         private Tree NewNode(int item)

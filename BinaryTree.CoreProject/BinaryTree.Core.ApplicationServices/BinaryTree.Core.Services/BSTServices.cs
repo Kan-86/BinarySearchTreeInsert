@@ -70,10 +70,5 @@ namespace BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.
             }
             return node;
         }
-
-        public IEnumerable<Tree> GetAllBinarySearchTrees()
-        {
-            return _bstRepo.GetAllBinarySearchTrees();
-        }
     }
 }

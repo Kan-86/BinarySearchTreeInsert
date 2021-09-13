@@ -17,16 +17,6 @@ namespace InfastructureProject.Repositories
         {
             _ctx = ctx;
         }
-        public IEnumerable<Tree> GetAllBinarySearchTrees()
-        {
-            var query = _ctx.Set<Tree>();
-
-            return _ctx.Tree
-                .Include(c => c.Left).
-                ThenInclude(x => x.Left)
-                .Include(c => c.Right)
-                .ThenInclude(c => c.Right);
-        }
 
         public Tree InsertValueIntoBinarySearchTree(Tree node, int value)
         {

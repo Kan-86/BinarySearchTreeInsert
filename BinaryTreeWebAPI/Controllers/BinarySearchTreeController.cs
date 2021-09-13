@@ -38,20 +38,5 @@ namespace BinaryTreeWebAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-
-        [HttpGet]
-        public ActionResult<IEnumerable<Tree>> Get()
-        {
-            try
-            {
-                var bst = _nodeServices.GetAllBinarySearchTrees();
-                return Ok(bst);
-            }
-            catch (Exception e)
-            {
-
-                return BadRequest(e.Message);
-            }
-        }
     }
 }

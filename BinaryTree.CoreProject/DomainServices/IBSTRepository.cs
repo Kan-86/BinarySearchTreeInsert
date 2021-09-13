@@ -8,6 +8,5 @@ namespace BinaryTree.CoreProject.DomainServices
     public interface IBSTRepository
     {
         Tree InsertValueIntoBinarySearchTree(Tree node, int value);
-        IEnumerable<Tree> GetAllBinarySearchTrees();
     }
 }

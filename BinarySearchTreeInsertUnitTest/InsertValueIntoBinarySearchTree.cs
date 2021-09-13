@@ -1,5 +1,6 @@
 using BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices;
 using BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.Core.Services;
+using BinaryTree.CoreProject.DomainServices;
 using BinaryTree.EntitiesProject.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -9,10 +10,11 @@ namespace BinarySearchTreeInsertUnitTest
     [TestClass]
     public class InsertValueIntoBinarySearchTree
     {
-        IBSTServices _nodeService;
+        private readonly IBSTServices _nodeService;
+        private readonly IBSTRepository _bstRepository;
         public InsertValueIntoBinarySearchTree()
         {
-            _nodeService = new BSTServices();
+            _nodeService = new BSTServices(_bstRepository);
         }
 
         private TestContext testContextInstance;

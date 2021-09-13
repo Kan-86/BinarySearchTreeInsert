@@ -17,9 +17,9 @@ jobs:
       - run:
           # Update this line with the directory that contains your tests project file
           working_directory: ~/Servicetests
-          name: Run BinarySearchTreeInsertUnitTest
+          name: Run tests
           command: |
-            dotnet test
+            dotnet BinarySearchTreeInsertUnitTest
             
 
 workflows:

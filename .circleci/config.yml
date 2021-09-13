@@ -17,9 +17,9 @@ jobs:
       - run:
           # Update this line with the directory that contains your tests project file
           working_directory: ~**/*Servicetests/*.csproj
-          name: Run *.csproj
+          name: Run tests
           command: |
-            dotnet test
+            dotnet *.csproj
             
 
 workflows:

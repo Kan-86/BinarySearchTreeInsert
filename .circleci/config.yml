@@ -19,7 +19,7 @@ jobs:
           working_directory: ~**/*Servicetests/*.csproj
           name: Run tests
           command: |
-            test
+            dotnet test
             
 
 workflows:

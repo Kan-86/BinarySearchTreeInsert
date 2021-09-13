@@ -1,10 +1,5 @@
 ﻿using BinaryTree.EntitiesProject.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InfastructureProject
 {
@@ -20,9 +15,16 @@ namespace InfastructureProject
             //Overrides the modelbuilder
             base.OnModelCreating(modelBuilder);
 
-  
+            //Many to many Menu-Ingredients
+            modelBuilder.Entity<Tree>()
+                .HasKey(a => new {
+                    a.TreeId
+                });
+            modelBuilder.Entity<Tree>()
+                .HasOne(a => a.Left);
+            modelBuilder.Entity<Tree>()
+                .HasOne(a => a.Left);
         }
-        public DbSet<Node> Node { get; set; }
         public DbSet<Tree> Tree { get; set; }
     }
 }

@@ -40,9 +40,18 @@ namespace BinaryTreeWebAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<string> Get()
+        public ActionResult<IEnumerable<Tree>> Get()
         {
-            return "test for docker";
+            try
+            {
+                var bst = _nodeServices.GetAllBinarySearchTrees();
+                return Ok(bst);
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
         }
     }
 }

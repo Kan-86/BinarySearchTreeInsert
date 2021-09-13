@@ -50,4 +50,6 @@ This is the project for Motarolla, Binary Search Tree API, with Unit tests
 
 # Docker container deployed on Azure, there is a test method for getting a string
 
+Put this into postman and the values above to see if it works. 
+
 http://dockerbstapicontainer.francecentral.azurecontainer.io/api/BinarySearchTree

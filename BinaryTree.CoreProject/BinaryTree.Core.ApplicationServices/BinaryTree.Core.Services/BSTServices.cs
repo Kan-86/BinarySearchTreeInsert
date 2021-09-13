@@ -1,4 +1,5 @@
-﻿using BinaryTree.EntitiesProject;
+﻿using BinaryTree.CoreProject.DomainServices;
+using BinaryTree.EntitiesProject;
 using BinaryTree.EntitiesProject.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,13 @@ namespace BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.
 {
     public class BSTServices : IBSTServices
     {
+
+        private readonly IBSTRepository _bstRepo;
+        public BSTServices(IBSTRepository bstRepo)
+        {
+            _bstRepo = bstRepo;
+        }
+
         // A utility function to create a new BST Node.  When we have found the tree node to insert the value.
         private Tree NewNode(int item)
         {
@@ -61,6 +69,11 @@ namespace BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.
                 throw new ArgumentException("The inserted value has a duplicate inside the tree, value provided must be unique.");
             }
             return node;
+        }
+
+        public IEnumerable<Tree> GetAllBinarySearchTrees()
+        {
+            return _bstRepo.GetAllBinarySearchTrees();
         }
     }
 }

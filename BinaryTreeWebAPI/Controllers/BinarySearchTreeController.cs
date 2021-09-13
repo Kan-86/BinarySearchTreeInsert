@@ -42,7 +42,7 @@ namespace BinaryTreeWebAPI.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return "test for docker2";
+            return "test for docker";
         }
     }
 }

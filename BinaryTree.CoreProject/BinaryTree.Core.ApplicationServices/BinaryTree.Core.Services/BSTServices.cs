@@ -44,7 +44,7 @@ namespace BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.
         {
             // Boolean to make help to check if the node has a duplicate.
             var notNewNode = false;
-
+            
             // If the node is empty we return a new one
             // This happens when we are at the bottom of the tree
             if (node == null)

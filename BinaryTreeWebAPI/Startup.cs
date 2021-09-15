@@ -51,7 +51,7 @@ namespace BinaryTreeWebAPI
 
                     var ctx = scope.ServiceProvider.GetService<BinarySearchTreeContext>();
                     ctx.Database.EnsureCreated();
-                    DbInitializer.SeedDb(ctx);
+                    //DbInitializer.SeedDb(ctx);
                 }
             }
 

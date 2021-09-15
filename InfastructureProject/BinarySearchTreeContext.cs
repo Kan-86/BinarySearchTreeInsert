@@ -14,6 +14,7 @@ namespace InfastructureProject
 
             //Overrides the modelbuilder
             base.OnModelCreating(modelBuilder);
+
         }
         public DbSet<Tree> Tree { get; set; }
     }

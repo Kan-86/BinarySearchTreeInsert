@@ -20,9 +20,6 @@ namespace InfastructureProject.Repositories
 
         public IEnumerable<Tree> GetAllBinarySearchTrees()
         {
-            var query1 = _ctx.Tree.Take(3);
-            var query2 = _ctx.Tree.Include(l => l.Left).Include(r => r.Right);
-            var query3 = _ctx.Tree.First();
 
 
             return _ctx.Tree;

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfastructureProject.Migrations
 {
     [DbContext(typeof(BinarySearchTreeContext))]
-    [Migration("20210915140821_BinarySearchTreeCTX")]
-    partial class BinarySearchTreeCTX
+    [Migration("20210915202209_BSTSQLDB")]
+    partial class BSTSQLDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

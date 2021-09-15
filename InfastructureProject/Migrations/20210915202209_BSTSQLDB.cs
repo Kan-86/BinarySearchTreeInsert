@@ -2,7 +2,7 @@
 
 namespace InfastructureProject.Migrations
 {
-    public partial class BinarySearchTreeCTX : Migration
+    public partial class BSTSQLDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

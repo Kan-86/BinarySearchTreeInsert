@@ -35,7 +35,7 @@ This is the project for Motarolla, Binary Search Tree API, with Unit tests
 # Checks if the value already exists
 
 {
-  "value": 3,
+  "value": 2,
   "tree": {
     "value": 10,
     "left": {

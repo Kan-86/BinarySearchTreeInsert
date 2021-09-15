@@ -2,7 +2,7 @@
 
 namespace InfastructureProject.Migrations
 {
-    public partial class MyFirstMigration : Migration
+    public partial class BinarySearchTreeCTX : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,26 +12,36 @@ namespace InfastructureProject.Migrations
                 {
                     TreeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    LeftTreeId = table.Column<int>(type: "int", nullable: true),
+                    RightId = table.Column<int>(type: "int", nullable: true),
+                    LeftId = table.Column<int>(type: "int", nullable: true),
                     Value = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tree", x => x.TreeId);
                     table.ForeignKey(
-                        name: "FK_Tree_Tree_LeftTreeId",
-                        column: x => x.LeftTreeId,
+                        name: "FK_Tree_Tree_LeftId",
+                        column: x => x.LeftId,
+                        principalTable: "Tree",
+                        principalColumn: "TreeId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Tree_Tree_RightId",
+                        column: x => x.RightId,
                         principalTable: "Tree",
                         principalColumn: "TreeId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tree_LeftTreeId",
+                name: "IX_Tree_LeftId",
                 table: "Tree",
-                column: "LeftTreeId",
-                unique: true,
-                filter: "[LeftTreeId] IS NOT NULL");
+                column: "LeftId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tree_RightId",
+                table: "Tree",
+                column: "RightId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

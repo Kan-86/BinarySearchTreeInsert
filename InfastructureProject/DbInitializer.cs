@@ -16,8 +16,6 @@ namespace InfastructureProject
 
         public static void SeedDb(BinarySearchTreeContext ctx)
         {
-
-
             List<Tree> tree = new List<Tree>
             {
 

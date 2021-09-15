@@ -14,16 +14,6 @@ namespace InfastructureProject
 
             //Overrides the modelbuilder
             base.OnModelCreating(modelBuilder);
-
-            //Many to many Menu-Ingredients
-            modelBuilder.Entity<Tree>()
-                .HasKey(a => new {
-                    a.TreeId
-                });
-            modelBuilder.Entity<Tree>()
-                .HasOne(a => a.Left);
-            modelBuilder.Entity<Tree>()
-                .HasOne(a => a.Left);
         }
         public DbSet<Tree> Tree { get; set; }
     }

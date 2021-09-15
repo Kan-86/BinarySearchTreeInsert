@@ -31,7 +31,8 @@ namespace BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.
             if (value != 0)
             {
                 var treeNode = BinarySearchTreeInOrder(node, value);
-                return treeNode;
+                var addTreeNodeToDb = _bstRepo.InsertValueIntoBinarySearchTree(treeNode);
+                return addTreeNodeToDb;
             }
             else
             {
@@ -69,6 +70,11 @@ namespace BinaryTree.CoreProject.BinaryTree.Core.ApplicationServices.BinaryTree.
                 throw new ArgumentException("The inserted value has a duplicate inside the tree, value provided must be unique.");
             }
             return node;
+        }
+
+        public IEnumerable<Tree> GetAllBinarySearchTrees()
+        {
+            return _bstRepo.GetAllBinarySearchTrees();
         }
     }
 }

@@ -18,9 +18,21 @@ namespace InfastructureProject.Repositories
             _ctx = ctx;
         }
 
-        public Tree InsertValueIntoBinarySearchTree(Tree node, int value)
+        public IEnumerable<Tree> GetAllBinarySearchTrees()
         {
-            throw new NotImplementedException();
+            var query1 = _ctx.Tree.Take(3);
+            var query2 = _ctx.Tree.Include(l => l.Left).Include(r => r.Right);
+            var query3 = _ctx.Tree.First();
+
+
+            return _ctx.Tree;
+        }
+
+        public Tree InsertValueIntoBinarySearchTree(Tree treeNode)
+        {
+            _ctx.Attach(treeNode).State = EntityState.Added;
+            _ctx.SaveChanges();
+            return treeNode;
         }
     }
 }

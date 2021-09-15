@@ -26,7 +26,10 @@ namespace InfastructureProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("LeftTreeId")
+                    b.Property<int?>("LeftId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("RightId")
                         .HasColumnType("int");
 
                     b.Property<int>("Value")
@@ -34,9 +37,9 @@ namespace InfastructureProject.Migrations
 
                     b.HasKey("TreeId");
 
-                    b.HasIndex("LeftTreeId")
-                        .IsUnique()
-                        .HasFilter("[LeftTreeId] IS NOT NULL");
+                    b.HasIndex("LeftId");
+
+                    b.HasIndex("RightId");
 
                     b.ToTable("Tree");
                 });
@@ -44,14 +47,15 @@ namespace InfastructureProject.Migrations
             modelBuilder.Entity("BinaryTree.EntitiesProject.Entities.Tree", b =>
                 {
                     b.HasOne("BinaryTree.EntitiesProject.Entities.Tree", "Left")
-                        .WithOne("Right")
-                        .HasForeignKey("BinaryTree.EntitiesProject.Entities.Tree", "LeftTreeId");
+                        .WithMany()
+                        .HasForeignKey("LeftId");
+
+                    b.HasOne("BinaryTree.EntitiesProject.Entities.Tree", "Right")
+                        .WithMany()
+                        .HasForeignKey("RightId");
 
                     b.Navigation("Left");
-                });
 
-            modelBuilder.Entity("BinaryTree.EntitiesProject.Entities.Tree", b =>
-                {
                     b.Navigation("Right");
                 });
 #pragma warning restore 612, 618
